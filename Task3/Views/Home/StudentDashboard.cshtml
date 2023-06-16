@@ -1,0 +1,30 @@
+﻿@model List<Task3.Tasks>
+
+@{
+    ViewBag.Title = "StudentDashboard";
+}
+
+<h2>Welcome to the Dashboard</h2>
+
+@if (Model.Count > 0)
+{
+    <table>
+        <tr>
+            <th>Task Name</th>
+            <th>Task Description</th>
+            <th>Task Status</th>
+        </tr>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.TaskName</td>
+                <td>@task.TaskDescription</td>
+                <td>@task.TaskStatus</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No tasks found for the current user.</p>
+}
